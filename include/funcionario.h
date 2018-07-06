@@ -1,6 +1,6 @@
 /**
  * @file funcionario.h
- * @brief Arquivo .h com as definições da Classe produto
+ * @brief Arquivo .h com as definições da Classe Funcionario e seus derivados
  */
 
 #ifndef FUNCIONARIO_H

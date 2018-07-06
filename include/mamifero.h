@@ -10,6 +10,8 @@
 #define MAMIFERO_H
 
 #include <iostream>
+#include "animal.h"
+
 
 using namespace std;
 

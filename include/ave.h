@@ -10,6 +10,8 @@
 #define AVE_H
 
 #include <iostream>
+#include "animal.h"
+
 
 using namespace std;
 

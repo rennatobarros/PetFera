@@ -12,6 +12,9 @@ protected:
 	string dieta;
 	string batismo;
 	char sexo;
+	Veterinario veterinario;
+	Tratador tratador;
+
 
 public:
 	Animal();
@@ -25,6 +28,8 @@ public:
 	string getDieta();
 	string getBatismo();
 	char getSexo();
+	Veterinario getVeterinario();
+	Tratador getTratador();
 
 	void setId(int id_);
 	void setTamanho(float tamanho_);
@@ -34,6 +39,8 @@ public:
 	void setDieta(string dieta_);
 	void setBastismo(string batismo_);
 	void setSexo(char sexo_);
+	void setVeterinario(Veterinario veterinario_);
+	void setTratador(Tratador tratador_);
 
 
 };

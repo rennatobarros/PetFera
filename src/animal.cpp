@@ -51,6 +51,18 @@ Animal::getSexo()
 	return sexo;
 }
 
+Veterinario
+Animal::getVeterinario()
+{
+	return veterinario;
+}
+
+Tratador
+Animal::getTratador()
+{ 
+	return tratador;
+}
+
 void 
 Animal::setId(int id_)
 {
@@ -87,7 +99,8 @@ Animal::setDieta(string dieta_)
 	dieta = dieta;
 }
 
-void Animal::setBastismo(string batismo_)
+void
+Animal::setBastismo(string batismo_)
 {
 	bastismo = batismo_;
 }
@@ -96,4 +109,16 @@ void
 Animal::setSexo(char sexo_)
 {
 	sexo = sexo_;
+}
+
+void 
+Animal::Tratador(char sexo_)
+{
+	sexo = sexo_;
+}
+
+void 
+Animal::setVeterinario(string veterinario_)
+{
+	veterinario = veterinario_;
 }

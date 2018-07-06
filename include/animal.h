@@ -9,6 +9,7 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
 
+#include "funcionario.h"
 
 /**
  * @brief      Class for animal.
@@ -30,7 +31,7 @@ protected:
 
 public:
 	Animal();
-	~Animal();
+	virtual ~Animal();
 	
 	int getId();
 	float getTamanho();

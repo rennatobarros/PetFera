@@ -16,7 +16,7 @@ using namespace std;
 /**
  * @brief      Class for reptil.
  */
-class Reptil
+class Reptil : public Animal
 {
 protected:
 	bool venenoso;

@@ -16,7 +16,7 @@ using namespace std;
 /**
  * @brief      Class for mamifero.
  */
-class Mamifero
+class Mamifero : public Animal
 {
 protected:
 	string corPelo;

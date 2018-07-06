@@ -16,7 +16,7 @@ using namespace std;
 /**
  * @brief      Class for anfibio.
  */
-class Anfibio
+class Anfibio : public Animal
 {
 protected:
 	int totalMudas;

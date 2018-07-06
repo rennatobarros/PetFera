@@ -16,7 +16,7 @@ using namespace std;
 /**
  * @brief      Class for ave.
  */
-class Ave
+class Ave : public Animal
 {
 protected:
 	int tamanhoBico;

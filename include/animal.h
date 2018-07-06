@@ -1,6 +1,18 @@
+/**
+* @file animal.h
+* @brief Cabeçalho da classe animal
+* @author Antonio Marcos Oliveira
+* @author Renato Barros de Lima Freitas
+* @since 02/07/2018
+* @date 06/07/2018
+*/
 #ifndef ANIMAL_H
 #define ANIMAL_H
 
+
+/**
+ * @brief      Class for animal.
+ */
 class Animal
 {
 protected:
@@ -41,7 +53,7 @@ public:
 	void setSexo(char sexo_);
 	void setVeterinario(Veterinario veterinario_);
 	void setTratador(Tratador tratador_);
-
+	
 
 };
 

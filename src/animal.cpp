@@ -179,7 +179,7 @@ Animal::setNome(string nome_)
  * @param[in]  <unnamed>  { parameter_description }
  */
 void 
-Animal::setCientifico(cientifico_)
+Animal::setCientifico(string cientifico_)
 {
 	cientifico = cientifico_;
 }
@@ -201,9 +201,9 @@ Animal::setDieta(string dieta_)
  * @param[in]  batismo_  The batismo
  */
 void
-Animal::setBastismo(string batismo_)
+Animal::setBatismo(string batismo_)
 {
-	bastismo = batismo_;
+	batismo = batismo_;
 }
 
 /**

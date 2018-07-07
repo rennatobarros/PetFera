@@ -7,6 +7,8 @@
  */
 
 #include <iostream>
+using namespace std;
+
 #include <map>
 #include <fstream>
 #include <sstream>
@@ -30,8 +32,15 @@
 
 void validaEntrada(string opcao);
 
-void initAnimais(ifstream *arq, map<int, Anfibio> *anfibios, map<int, Repteis> *repteis, map<int, Mamifero> *mamiferos, map<int, Aves> *aves);
+void initAnimais(ifstream arq, map<int, Anfibio> &anfibios, map<int, Reptil> &repteis, map<int, Mamifero> &mamiferos, map<int, Ave> &aves);
 
-void initFuncionarios(ifstream *arq, map<int, Tratador> *tratadores, map<int, Veterinario> *veterinarios);
+void initFuncionarios(ifstream arq, map<int, Tratador> &tratadores, map<int, Veterinario> &veterinarios);
+
+template <typename T>
+void cadastrar(map<int,T> * map){
+	T new_cadastro;
+	std::cin >> new_cadastro;
+	map->emplace(new_cadastro.getId(), new_cadastro);
+}
 
 #endif

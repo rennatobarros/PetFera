@@ -28,7 +28,7 @@ public:
 
 	string getCorPelo();
 
-	void setCorPelo(corPelo_);
+	void setCorPelo(string corPelo_);
 	
 };
 

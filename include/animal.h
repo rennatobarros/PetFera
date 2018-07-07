@@ -9,6 +9,11 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
 
+#include <iostream>
+using namespace std;
+
+#include <string>
+
 /**
  * @brief      Class for animal.
  */
@@ -48,7 +53,7 @@ public:
 	void setNome(string nome_);
 	void setCientifico(string cientifico_);
 	void setDieta(string dieta_);
-	void setBastismo(string batismo_);
+	void setBatismo(string batismo_);
 	void setSexo(char sexo_);
 	void setVeterinario(short veterinario_);
 	void setTratador(short tratador_);

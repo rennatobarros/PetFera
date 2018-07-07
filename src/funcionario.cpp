@@ -147,14 +147,14 @@ void Funcionario::setEspecialidade(string _especialidade) { especialidade = _esp
  * @return     Stream de saída com os dados do funcionário formatados
  */
 ostream& operator<<(ostream &o, Funcionario &f){
-	os << "Identificador do funcionário: " << f.getId() << endl;
-	os << "Função: " << f.getFuncao() << endl;
-	os << "Nome do funcionário: " << f.getNome() << endl;
-	os << "CPF do funcionário: " << f.getCpf() << endl;
-	os << "Idade do funcionário: " << f.getIdade() << endl;
-	os << "Tipo Sanguíneo: " << f.getTipoSanguineo() << endl;
-	os << "Fator RH: " << f.getFatorRH() << endl;
-	os << "Especialidade: " << f.getEspecialidade() << endl;
+	o << "Identificador do funcionário: " << f.getId() << endl;
+	o << "Função: " << f.getFuncao() << endl;
+	o << "Nome do funcionário: " << f.getNome() << endl;
+	o << "CPF do funcionário: " << f.getCpf() << endl;
+	o << "Idade do funcionário: " << f.getIdade() << endl;
+	o << "Tipo Sanguíneo: " << f.getTipoSanguineo() << endl;
+	o << "Fator RH: " << f.getFatorRH() << endl;
+	o << "Especialidade: " << f.getEspecialidade() << endl;
 	cout << endl;
 
 	return o;

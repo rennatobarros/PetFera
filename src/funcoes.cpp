@@ -6,7 +6,7 @@ void ValidaEntrada(string opcao){
 	}
 } 
 
-void initAnimais(ifstream *arq, map<int, Anfibio> *anfibios, map<int, Repteis> *repteis, map<int, Mamifero> *mamiferos, map<int, Aves> *aves){
+void initAnimais(ifstream arq, map<int, Anfibio> &anfibios, map<int, Reptil> &repteis, map<int, Mamifero> &mamiferos, map<int, Ave> &aves){
 	/** Tratando possiveis erros na abertura de arquivos. */
 	try{
 		arq.open("files/animais.csv");
@@ -50,14 +50,14 @@ void initAnimais(ifstream *arq, map<int, Anfibio> *anfibios, map<int, Repteis> *
 			animal.setClasse(classe);
 			animal.setNome(nome);
 			animal.setCientifico(cientifico);
-			animal.setSexo(sexo);
+			animal.setSexo(sexo[0]);
 			animal.setTamanho(stof(tamanho));
 			animal.setDieta(dieta);
 			animal.setVeterinario(stoi(vet));
 			animal.setTratador(stoi(tratador));
 			animal.setBatismo(batismo);
 
-			anfibios->emplace(stoi(id), animal);
+			anfibios.emplace(stoi(id), animal);
 			
 		}else if(classe == "Reptilia"){
 			Reptil animal;
@@ -66,14 +66,14 @@ void initAnimais(ifstream *arq, map<int, Anfibio> *anfibios, map<int, Repteis> *
 			animal.setClasse(classe);
 			animal.setNome(nome);
 			animal.setCientifico(cientifico);
-			animal.setSexo(sexo);
+			animal.setSexo(sexo[0]);
 			animal.setTamanho(stof(tamanho));
 			animal.setDieta(dieta);
 			animal.setVeterinario(stoi(vet));
 			animal.setTratador(stoi(tratador));
 			animal.setBatismo(batismo);
 
-			repteis->emplace(stoi(id), animal);
+			repteis.emplace(stoi(id), animal);
 
 		}else if(classe == "Aves"){
 			Ave animal;
@@ -82,14 +82,14 @@ void initAnimais(ifstream *arq, map<int, Anfibio> *anfibios, map<int, Repteis> *
 			animal.setClasse(classe);
 			animal.setNome(nome);
 			animal.setCientifico(cientifico);
-			animal.setSexo(sexo);
+			animal.setSexo(sexo[0]);
 			animal.setTamanho(stof(tamanho));
 			animal.setDieta(dieta);
 			animal.setVeterinario(stoi(vet));
 			animal.setTratador(stoi(tratador));
 			animal.setBatismo(batismo);
 
-			aves->emplace(stoi(id), animal);
+			aves.emplace(stoi(id), animal);
 		
 		}else if(classe == "Mammalia"){
 			Mamifero animal;
@@ -98,20 +98,20 @@ void initAnimais(ifstream *arq, map<int, Anfibio> *anfibios, map<int, Repteis> *
 			animal.setClasse(classe);
 			animal.setNome(nome);
 			animal.setCientifico(cientifico);
-			animal.setSexo(sexo);
+			animal.setSexo(sexo[0]);
 			animal.setTamanho(stof(tamanho));
 			animal.setDieta(dieta);
 			animal.setVeterinario(stoi(vet));
 			animal.setTratador(stoi(tratador));
 			animal.setBatismo(batismo);
 
-			mamiferos->emplace(stoi(id), animal);
+			mamiferos.emplace(stoi(id), animal);
 		}
 
 	}
 }
 
-void initFuncionarios(ifstream *arq, map<int, Tratador> *tratadores, map<int, Veterinario> *veterinarios){
+void initFuncionarios(ifstream arq, map<int, Tratador> &tratadores, map<int, Veterinario> &veterinarios){
 	/** Tratando possiveis erros na abertura de arquivos. */
 
 	try{
@@ -144,7 +144,7 @@ void initFuncionarios(ifstream *arq, map<int, Tratador> *tratadores, map<int, Ve
 		getline(ss, fator, ';');
 		getline(ss, especialidade, ';');		
 
-		if (classe == "Tratador"){
+		if (funcao == "Tratador"){
 			Tratador funcionario;
 
 			funcionario.setId(stoi(id));
@@ -156,9 +156,9 @@ void initFuncionarios(ifstream *arq, map<int, Tratador> *tratadores, map<int, Ve
 			funcionario.setFatorRH(fator[0]);
 			funcionario.setEspecialidade(especialidade);
 
-			tratadores->emplace(stoi(id), funcionario);
+			tratadores.emplace(stoi(id), funcionario);
 			
-		}else if(classe == "Veterinario"){
+		}else if(funcao == "Veterinario"){
 			Veterinario funcionario;
 
 			funcionario.setId(stoi(id));
@@ -170,7 +170,7 @@ void initFuncionarios(ifstream *arq, map<int, Tratador> *tratadores, map<int, Ve
 			funcionario.setFatorRH(fator[0]);
 			funcionario.setEspecialidade(especialidade);
 
-			veterinarios->emplace(stoi(id), funcionario);
+			veterinarios.emplace(stoi(id), funcionario);
 
 		}
 

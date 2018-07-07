@@ -112,7 +112,7 @@ Animal::getSexo()
  *
  * @return     The veterinario.
  */
-Veterinario
+short
 Animal::getVeterinario()
 {
 	return veterinario;
@@ -123,7 +123,7 @@ Animal::getVeterinario()
  *
  * @return     The tratador.
  */
-Tratador
+short
 Animal::getTratador()
 { 
 	return tratador;
@@ -218,14 +218,14 @@ Animal::setSexo(char sexo_)
 }
 
 /**
- * @brief      { function_description }
+ * @brief      Sets the tratador
  *
  * @param[in]  sexo_  The sexo
  */
 void 
-Animal::Tratador(char sexo_)
+Animal::setTratador(short tratador_)
 {
-	sexo = sexo_;
+	tratador = tratador_;
 }
 
 /**
@@ -234,7 +234,7 @@ Animal::Tratador(char sexo_)
  * @param[in]  veterinario_  The veterinario
  */
 void 
-Animal::setVeterinario(string veterinario_)
+Animal::setVeterinario(short veterinario_)
 {
 	veterinario = veterinario_;
 }

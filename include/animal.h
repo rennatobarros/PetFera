@@ -9,8 +9,6 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
 
-#include "funcionario.h"
-
 /**
  * @brief      Class for animal.
  */
@@ -25,8 +23,8 @@ protected:
 	string dieta;
 	string batismo;
 	char sexo;
-	Veterinario veterinario;
-	Tratador tratador;
+	short veterinario;
+	short tratador;
 
 
 public:
@@ -41,19 +39,19 @@ public:
 	string getDieta();
 	string getBatismo();
 	char getSexo();
-	Veterinario getVeterinario();
-	Tratador getTratador();
+	short getVeterinario();
+	short getTratador();
 
 	void setId(int id_);
 	void setTamanho(float tamanho_);
 	void setClasse(string classe_);
 	void setNome(string nome_);
-	void setCientifico(cientifico_);
+	void setCientifico(string cientifico_);
 	void setDieta(string dieta_);
 	void setBastismo(string batismo_);
 	void setSexo(char sexo_);
-	void setVeterinario(Veterinario veterinario_);
-	void setTratador(Tratador tratador_);
+	void setVeterinario(short veterinario_);
+	void setTratador(short tratador_);
 	
 
 };

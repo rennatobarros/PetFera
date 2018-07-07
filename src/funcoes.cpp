@@ -42,77 +42,6 @@ void initAnimais(ifstream arq, map<int, Anfibio> &anfibios, map<int, Reptil> &re
 				
 
 				if (classe == "Amphibia"){
-					Anfibio animal;
-
-				animal.setId(stoi(id));
-				animal.setClasse(classe);
-				animal.setNome(nome);
-				animal.setCientifico(cientifico);
-				animal.setSexo(sexo);
-				animal.setTamanho(stof(tamanho));
-				animal.setDieta(dieta);
-				animal.setVeterinario(stoi(vet));
-				animal.setTratador(stoi(tratador));
-				animal.setBatismo(batismo);
-
-				anfibios->emplace(stoi(id), animal);
-				
-				}else if(classe == "Reptilia"){
-					Reptil animal;
-
-					animal.setId(stoi(id));
-					animal.setClasse(classe);
-					animal.setNome(nome);
-					animal.setCientifico(cientifico);
-					animal.setSexo(sexo);
-					animal.setTamanho(stof(tamanho));
-					animal.setDieta(dieta);
-					animal.setVeterinario(stoi(vet));
-					animal.setTratador(stoi(tratador));
-					animal.setBatismo(batismo);
-
-					repteis->emplace(stoi(id), animal);
-
-				}else if(classe == "Aves"){
-					Ave animal;
-
-					animal.setId(stoi(id));
-					animal.setClasse(classe);
-					animal.setNome(nome);
-					animal.setCientifico(cientifico);
-					animal.setSexo(sexo);
-					animal.setTamanho(stof(tamanho));
-					animal.setDieta(dieta);
-					animal.setVeterinario(stoi(vet));
-					animal.setTratador(stoi(tratador));
-					animal.setBatismo(batismo);
-
-					aves->emplace(stoi(id), animal);
-				
-				}else if(classe == "Mammalia"){
-					Mamifero animal;
-
-					animal.setId(stoi(id));
-					animal.setClasse(classe);
-					animal.setNome(nome);
-					animal.setCientifico(cientifico);
-					animal.setSexo(sexo);
-					animal.setTamanho(stof(tamanho));
-					animal.setDieta(dieta);
-					animal.setVeterinario(stoi(vet));
-					animal.setTratador(stoi(tratador));
-					animal.setBatismo(batismo);
-
-					mamiferos->emplace(stoi(id), animal);
-				}
-			}
-		}
-	}catch(FalhaNoArquivo &f){
-		cerr << f.what() << endl;
-	}catch(...){
-		cerr << "Erro desconhecido." << endl;
-
-		if (classe == "Amphibia"){
 			Anfibio animal;
 
 			animal.setId(stoi(id));
@@ -176,7 +105,12 @@ void initAnimais(ifstream arq, map<int, Anfibio> &anfibios, map<int, Reptil> &re
 
 			mamiferos.emplace(stoi(id), animal);
 		}
-
+			}
+		}
+	}catch(FalhaNoArquivo &f){
+		cerr << f.what() << endl;
+	}catch(...){
+		cerr << "Erro desconhecido." << endl;
 	}
 }
 

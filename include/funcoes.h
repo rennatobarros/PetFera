@@ -35,11 +35,11 @@ void initAnimais(ifstream arq, map<int, Anfibio> &anfibios, map<int, Reptil> &re
 
 void initFuncionarios(ifstream arq, map<int, Tratador> &tratadores, map<int, Veterinario> &veterinarios);
 
-template <typename T>
+/** template <typename T>
 void cadastrar(map<int,T> * map){
 	T new_cadastro;
 	std::cin >> new_cadastro;
 	map->emplace(new_cadastro.getId(), new_cadastro);
-}
+}*/
 
 #endif

@@ -20,12 +20,12 @@ int main(){
 	ifstream animais;
 	ifstream funcionarios;
 
-	map<int,Anfibio *> map_anfibios;
-	map<int,Reptil *> map_repteis;
-	map<int,Mamifero *> map_mamiferos;
-	map<int,Ave *> map_aves;
-	map<int,Tratador *> map_tratador;
-	map<int,Veterinario *> map_veterinario;
+	map<int,Anfibio > map_anfibios;
+	map<int,Reptil > map_repteis;
+	map<int,Mamifero > map_mamiferos;
+	map<int,Ave > map_aves;
+	map<int,Tratador > map_tratador;
+	map<int,Veterinario > map_veterinario;
 
 	/** Função que salva os animais. */
 	initAnimais(animais, map_anfibios, map_repteis, map_mamiferos, map_aves);

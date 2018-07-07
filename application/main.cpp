@@ -48,6 +48,7 @@ int main(){
 			cout << "6 - Excluir funcionario" << endl;
 			cout << "0 - Sair" << endl;
 			cin >> opcao;
+<<<<<<< HEAD
 
 			switch (opcao){
 				case 1:
@@ -94,6 +95,8 @@ int main(){
 				break;
 			}
 
+=======
+>>>>>>> 16a64a33fb70aa83cd99b1590fe02b1c3608509a
 		}
 	}catch(ErroNaEntrada &e){
 		cerr << e.what() << endl;

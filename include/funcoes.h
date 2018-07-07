@@ -1,10 +1,9 @@
-#ifndef FUNCOES_H
-#define FUNCOES_H
-
 /**
  * @file funcionario.h
  * @brief Arquivo .h com as definições dos métodos utilizados no sistema.
  */
+#ifndef FUNCOES_H
+#define FUNCOES_H
 
 #include <iostream>
 using namespace std;

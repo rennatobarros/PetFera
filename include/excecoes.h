@@ -10,8 +10,10 @@
 #define EXCECOES_H
 
 #include <stdexcept>
+#include <exception>
 
 using std::invalid_argument;
+using std::exception;
 
 /**
  * @brief      Class for erro na entrada.
@@ -27,6 +29,17 @@ class ErroNaEntrada : public invalid_argument{
 class IdInvalido : public invalid_argument{
 	public:
 		IdInvalido() : invalid_argument("ID não corresponde!") {}
+};
+
+/**
+ * @brief      Class for falha no arquivo.
+ */
+class FalhaNoArquivo
+{
+public:
+	const char* what(){
+		return "Não foi possível ler o arquivo! Verifique a integridade dele e tente novamente.";
+	}
 };
 
 #endif

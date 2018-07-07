@@ -43,7 +43,6 @@ int main(){
 			cout << "6 - Excluir funcionario" << endl;
 			cout << "0 - Sair" << endl;
 			cin >> opcao;
-
 		}
 	}catch(ErroNaEntrada &e){
 		cerr << e.what() << endl;

@@ -109,10 +109,9 @@ void initAnimais(ifstream arq, map<int, Anfibio> &anfibios, map<int, Reptil> &re
 		}
 	}catch(FalhaNoArquivo &f){
 		cerr << f.what() << endl;
-	}catch(...)
+	}catch(...){
 		cerr << "Erro desconhecido." << endl;
 
-<<<<<<< HEAD
 		if (classe == "Amphibia"){
 			Anfibio animal;
 
@@ -179,9 +178,6 @@ void initAnimais(ifstream arq, map<int, Anfibio> &anfibios, map<int, Reptil> &re
 		}
 
 	}
-=======
-	
->>>>>>> 16a64a33fb70aa83cd99b1590fe02b1c3608509a
 }
 
 void initFuncionarios(ifstream arq, map<int, Tratador> &tratadores, map<int, Veterinario> &veterinarios){

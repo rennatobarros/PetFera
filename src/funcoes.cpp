@@ -1,12 +1,14 @@
 #include "funcoes.h"
 
-void ValidaEntrada(string opcao){
+void validaEntrada(string opcao){
 	if (!isdigit(opcao[0])){
 			throw ErroNaEntrada();
 	}
 } 
 
-void initAnimais(ifstream arq, map<int, Anfibio> &anfibios, map<int, Reptil> &repteis, map<int, Mamifero> &mamiferos, map<int, Ave> &aves){
+void initAnimais(map<int, Anfibio> anfibios, map<int, Reptil> repteis, map<int, Mamifero> mamiferos, map<int, Ave> aves){
+	ifstream arq;
+
 	/** Tratando possiveis erros na abertura de arquivos. */
 	try{
 		arq.open("files/animais.csv");
@@ -42,85 +44,20 @@ void initAnimais(ifstream arq, map<int, Anfibio> &anfibios, map<int, Reptil> &re
 				
 
 				if (classe == "Amphibia"){
-<<<<<<< HEAD
-			Anfibio animal;
-
-			animal.setId(stoi(id));
-			animal.setClasse(classe);
-			animal.setNome(nome);
-			animal.setCientifico(cientifico);
-			animal.setSexo(sexo[0]);
-			animal.setTamanho(stof(tamanho));
-			animal.setDieta(dieta);
-			animal.setVeterinario(stoi(vet));
-			animal.setTratador(stoi(tratador));
-			animal.setBatismo(batismo);
-
-			anfibios.emplace(stoi(id), animal);
-			
-		}else if(classe == "Reptilia"){
-			Reptil animal;
-
-			animal.setId(stoi(id));
-			animal.setClasse(classe);
-			animal.setNome(nome);
-			animal.setCientifico(cientifico);
-			animal.setSexo(sexo[0]);
-			animal.setTamanho(stof(tamanho));
-			animal.setDieta(dieta);
-			animal.setVeterinario(stoi(vet));
-			animal.setTratador(stoi(tratador));
-			animal.setBatismo(batismo);
-
-			repteis.emplace(stoi(id), animal);
-
-		}else if(classe == "Aves"){
-			Ave animal;
-
-			animal.setId(stoi(id));
-			animal.setClasse(classe);
-			animal.setNome(nome);
-			animal.setCientifico(cientifico);
-			animal.setSexo(sexo[0]);
-			animal.setTamanho(stof(tamanho));
-			animal.setDieta(dieta);
-			animal.setVeterinario(stoi(vet));
-			animal.setTratador(stoi(tratador));
-			animal.setBatismo(batismo);
-
-			aves.emplace(stoi(id), animal);
-		
-		}else if(classe == "Mammalia"){
-			Mamifero animal;
-
-			animal.setId(stoi(id));
-			animal.setClasse(classe);
-			animal.setNome(nome);
-			animal.setCientifico(cientifico);
-			animal.setSexo(sexo[0]);
-			animal.setTamanho(stof(tamanho));
-			animal.setDieta(dieta);
-			animal.setVeterinario(stoi(vet));
-			animal.setTratador(stoi(tratador));
-			animal.setBatismo(batismo);
-
-			mamiferos.emplace(stoi(id), animal);
-		}
-=======
 					Anfibio animal;
 
 				animal.setId(stoi(id));
 				animal.setClasse(classe);
 				animal.setNome(nome);
 				animal.setCientifico(cientifico);
-				animal.setSexo(sexo);
+				animal.setSexo(sexo[0]);
 				animal.setTamanho(stof(tamanho));
 				animal.setDieta(dieta);
 				animal.setVeterinario(stoi(vet));
 				animal.setTratador(stoi(tratador));
 				animal.setBatismo(batismo);
 
-				anfibios->emplace(stoi(id), animal);
+				anfibios.emplace(stoi(id), animal);
 				
 				}else if(classe == "Reptilia"){
 					Reptil animal;
@@ -129,14 +66,14 @@ void initAnimais(ifstream arq, map<int, Anfibio> &anfibios, map<int, Reptil> &re
 					animal.setClasse(classe);
 					animal.setNome(nome);
 					animal.setCientifico(cientifico);
-					animal.setSexo(sexo);
+					animal.setSexo(sexo[0]);
 					animal.setTamanho(stof(tamanho));
 					animal.setDieta(dieta);
 					animal.setVeterinario(stoi(vet));
 					animal.setTratador(stoi(tratador));
 					animal.setBatismo(batismo);
 
-					repteis->emplace(stoi(id), animal);
+					repteis.emplace(stoi(id), animal);
 
 				}else if(classe == "Aves"){
 					Ave animal;
@@ -145,14 +82,14 @@ void initAnimais(ifstream arq, map<int, Anfibio> &anfibios, map<int, Reptil> &re
 					animal.setClasse(classe);
 					animal.setNome(nome);
 					animal.setCientifico(cientifico);
-					animal.setSexo(sexo);
+					animal.setSexo(sexo[0]);
 					animal.setTamanho(stof(tamanho));
 					animal.setDieta(dieta);
 					animal.setVeterinario(stoi(vet));
 					animal.setTratador(stoi(tratador));
 					animal.setBatismo(batismo);
 
-					aves->emplace(stoi(id), animal);
+					aves.emplace(stoi(id), animal);
 				
 				}else if(classe == "Mammalia"){
 					Mamifero animal;
@@ -161,14 +98,14 @@ void initAnimais(ifstream arq, map<int, Anfibio> &anfibios, map<int, Reptil> &re
 					animal.setClasse(classe);
 					animal.setNome(nome);
 					animal.setCientifico(cientifico);
-					animal.setSexo(sexo);
+					animal.setSexo(sexo[0]);
 					animal.setTamanho(stof(tamanho));
 					animal.setDieta(dieta);
 					animal.setVeterinario(stoi(vet));
 					animal.setTratador(stoi(tratador));
 					animal.setBatismo(batismo);
 
-					mamiferos->emplace(stoi(id), animal);
+					mamiferos.emplace(stoi(id), animal);
 				}
 				if (classe == "Amphibia"){
 					Anfibio animal;
@@ -232,7 +169,6 @@ void initAnimais(ifstream arq, map<int, Anfibio> &anfibios, map<int, Reptil> &re
 
 					mamiferos.emplace(stoi(id), animal);
 				}
->>>>>>> 8ae458bbfd40e63026628fdc7b074d44a8346795
 			}
 		}
 	}catch(FalhaNoArquivo &f){
@@ -242,7 +178,9 @@ void initAnimais(ifstream arq, map<int, Anfibio> &anfibios, map<int, Reptil> &re
 	}
 }
 
-void initFuncionarios(ifstream arq, map<int, Tratador> &tratadores, map<int, Veterinario> &veterinarios){
+void initFuncionarios(map<int, Tratador> tratadores, map<int, Veterinario> veterinarios){
+	ifstream arq;
+
 	/** Tratando possiveis erros na abertura de arquivos. */
 
 	try{
@@ -305,6 +243,7 @@ void initFuncionarios(ifstream arq, map<int, Tratador> &tratadores, map<int, Vet
 		}
 	}catch(FalhaNoArquivo &f){
 		cerr << f.what() << endl;
-	}catch(...)
+	}catch(...){
 		cerr << "Erro desconhecido." << endl;	
+	}
 }

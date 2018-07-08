@@ -34,7 +34,7 @@ protected:
 
 public:
 	Animal();
-	virtual ~Animal();
+	virtual ~Animal() = 0;
 	
 	int getId();
 	float getTamanho();

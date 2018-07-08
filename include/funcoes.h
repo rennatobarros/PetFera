@@ -26,16 +26,18 @@ using namespace std;
 #include "ave_nativa.h"
 
 #include "funcionario.h"
+#include "veterinario.h"
+#include "tratador.h"
 
 #include "excecoes.h"
 
 void validaEntrada(string opcao);
 
-void initAnimais(ifstream arq, map<int, Anfibio> &anfibios, map<int, Reptil> &repteis, map<int, Mamifero> &mamiferos, map<int, Ave> &aves);
+void initAnimais(map<int, Anfibio> anfibios, map<int, Reptil> repteis, map<int, Mamifero> mamiferos, map<int, Ave> aves);
 
-void initFuncionarios(ifstream arq, map<int, Tratador> &tratadores, map<int, Veterinario> &veterinarios);
+void initFuncionarios(map<int, Tratador> tratadores, map<int, Veterinario> veterinarios);
 
-/** template <typename T>
+/**template <typename T>
 void cadastrar(map<int,T> * map){
 	T new_cadastro;
 	std::cin >> new_cadastro;

@@ -9,16 +9,14 @@
  * @brief Arquivo principal do programa
 */
 
-#include <iostream>
-using namespace std;
-
 #include "funcoes.h"
 #include "excecoes.h"
 
+#include <iostream>
+using namespace std;
+
 int main(){
-	/** Arquivos .csv a serem lidos. */
-	ifstream animais;
-	ifstream funcionarios;
+	
 
 	map<int,Anfibio > map_anfibios;
 	map<int,Reptil > map_repteis;
@@ -28,17 +26,17 @@ int main(){
 	map<int,Veterinario > map_veterinario;
 
 	/** Função que salva os animais. */
-	initAnimais(animais, map_anfibios, map_repteis, map_mamiferos, map_aves);
+	initAnimais(map_anfibios, map_repteis, map_mamiferos, map_aves);
 
 	/** Função que salva os funcionários. */
-	initFuncionarios(funcionarios, map_tratador, map_veterinario);
+	initFuncionarios(map_tratador, map_veterinario);
 
 	try{
 
-		string opcao = "";
-		validaEntrada(opcao);
+		string escolha = "";
+		validaEntrada(escolha);
 
-		opcao = stoi(opcao);
+		int opcao = stoi(escolha);
 		while(opcao != 0){
 			cout << "1 - Cadastrar animal" << endl;
 			cout << "2 - Cadastrar funcionario" << endl;
@@ -59,16 +57,16 @@ int main(){
 					cin >> opcao;
 					switch(opcao){
 						case 1:
-							cadastrar(&map_mamiferos);
+							//cadastrar(&map_mamiferos);
 							break;
 						case 2:
-							cadastrar(&map_anfibios);
+							//cadastrar(&map_anfibios);
 							break;
 						case 3:
-							cadastrar(&map_repteis);
+							//cadastrar(&map_repteis);
 							break;
 						case 4:
-							cadastrar(&map_aves);
+							//cadastrar(&map_aves);
 							break;
 						default:
 							cout << "Opcao invalida" << endl;
@@ -82,10 +80,10 @@ int main(){
 				cin >> opcao;
 				switch(opcao){
 					case 1:
-						cadastrar(&map_veterinario);
+						//cadastrar(&map_veterinario);
 						break;
 					case 2:
-						cadastrar(&map_tratador);
+						//cadastrar(&map_tratador);
 						break;
 					default:
 						cout << "Opcao invalida" << endl;

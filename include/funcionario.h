@@ -62,29 +62,13 @@ class Funcionario{
 		Funcionario();
 		/** Contrutor parametrizado */
 		Funcionario(int _id, string _funcao, string _nome, string _cpf, short _idade, string _tipo, char _fator, string _especialidade);
-		virtual ~Funcionario();
+		virtual ~Funcionario() = 0;
 
 		/** Sobrecarga de operadores */
 		friend istream& operator>> (istream &i, Funcionario &f);
 		friend ostream& operator<< (ostream &o, Funcionario &f);
 };
 
-/** Classe veterinario */
 
-class Veterinario : public Funcionario{
-	public:
-		Veterinario();
-		~Veterinario();
-	
-};
-
-/** Classe tratador */
-
-class Tratador : public Funcionario{
-	public:
-		Tratador();
-		~Tratador();
-	
-};
 
 #endif

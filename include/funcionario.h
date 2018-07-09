@@ -70,5 +70,24 @@ class Funcionario{
 };
 
 
+/**
+ * @brief      Classe para o Veterinario
+ */
+class Veterinario : public Funcionario{
+	public:
+		Veterinario();
+		~Veterinario();
+	
+};
+
+/**
+ * @brief      Classe para o Tratador
+ */
+class Tratador : public Funcionario{
+	public:
+		Tratador();
+		~Tratador();
+	
+};
 
 #endif

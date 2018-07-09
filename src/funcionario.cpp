@@ -203,3 +203,24 @@ istream& operator>>(istream &i, Funcionario &f){
 
 
 }
+
+/**
+ * @brief      Construtor do objeto Tratador.
+ */
+Tratador::Tratador(){}
+
+/**
+ * @brief      Desttrutor do objeto Tratador.
+ */
+Tratador::~Tratador(){}
+
+
+/**
+ * @brief      Construtor do objeto Veterinario.
+ */
+Veterinario::Veterinario(){}
+
+/**
+ * @brief      Destrutor do objeto Veterinario.
+ */
+Veterinario::~Veterinario(){}

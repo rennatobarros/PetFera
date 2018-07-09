@@ -14,20 +14,8 @@ using namespace std;
 #include <string>
 
 #include "animal.h"
-#include "anfibio.h"
-#include "ave.h"
-#include "mamifero.h"
-#include "reptil.h"
-
-#include "animal_silvestre.h"
-#include "exotico.h"
-#include "nativo.h"
-#include "ave_exotica.h"
-#include "ave_nativa.h"
 
 #include "funcionario.h"
-#include "veterinario.h"
-#include "tratador.h"
 
 #include "excecoes.h"
 

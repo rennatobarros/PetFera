@@ -79,6 +79,14 @@ public:
 	void setSexo(char sexo_);
 	void setVeterinario(short veterinario_);
 	void setTratador(short tratador_);
+
+	/** Sobrecarga de operadores */
+	friend istream& operator>> (istream &i, Animal &a);
+	friend ostream& operator<< (ostream &o, Animal &a);
+
+private:
+	virtual ostream& print(ostream&) const = 0;
+	virtual istream& read(istream&) = 0;
 	
 
 };
@@ -91,6 +99,10 @@ class Anfibio : public Animal
 protected:
 	int totalMudas;
 	string ultimaMuda;
+
+private:
+	istream& read(istream &i);
+	ostream& print(ostream &o) const;
 
 public:
 	Anfibio();
@@ -114,6 +126,10 @@ protected:
 	int tamanhoBico;
 	int envergadura;
 
+private:
+	istream& read(istream &i);
+	ostream& print(ostream &o) const;
+
 public:
 	Ave();
 	Ave(int _id, float _tamanho, string _classe, string _nome, string _cientifico, string _dieta, string _batismo, char _sexo, short _veterinario, short _tratador, int _tamanhoBico, int _envergadura);
@@ -134,6 +150,11 @@ class Mamifero : public Animal
 {
 protected:
 	string corPelo;
+
+private:
+	istream& read(istream &i);
+	ostream& print(ostream &o) const;
+
 public:
 	Mamifero();
 	Mamifero(int _id, float _tamanho, string _classe, string _nome, string _cientifico, string _dieta, string _batismo, char _sexo, short _veterinario, short _tratador, string _corPelo);
@@ -153,6 +174,10 @@ class Reptil : public Animal
 protected:
 	bool venenoso;
 	string tipoVeneno;
+
+private:
+	istream& read(istream &i);
+	ostream& print(ostream &o) const;
 
 public:
 	Reptil();

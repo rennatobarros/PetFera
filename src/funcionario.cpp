@@ -139,6 +139,27 @@ void Funcionario::setFatorRH(char _fator) { fatorRH = _fator; }
 void Funcionario::setEspecialidade(string _especialidade) { especialidade = _especialidade; }
 
 /**
+ * @brief      Construtor do objeto Tratador.
+ */
+Tratador::Tratador(){}
+
+/**
+ * @brief      Desttrutor do objeto Tratador.
+ */
+Tratador::~Tratador(){}
+
+
+/**
+ * @brief      Construtor do objeto Veterinario.
+ */
+Veterinario::Veterinario(){}
+
+/**
+ * @brief      Destrutor do objeto Veterinario.
+ */
+Veterinario::~Veterinario(){}
+
+/**
  * @brief      Sobrecarga do operador de inserção
  *
  * @param      o     Variável do tipo ostream que corresponde ao stream de saída
@@ -157,8 +178,13 @@ ostream& operator<<(ostream &o, Funcionario &f){
 	o << "Especialidade: " << f.getEspecialidade() << endl;
 	cout << endl;
 
-	return o;
+	return f.print(o);
 }
+
+ostream& Veterinario::print(ostream &o)const {	return o; }
+
+ostream& Tratador::print(ostream &o)const{	return o; }
+
 
 /**
  * @brief      Sobrecarga do operador de extraçao
@@ -199,28 +225,10 @@ istream& operator>>(istream &i, Funcionario &f){
 	i >> temp;
 	f.setEspecialidade(temp);
 
-	return i;
-
+	return f.read(i);
 
 }
 
-/**
- * @brief      Construtor do objeto Tratador.
- */
-Tratador::Tratador(){}
+istream& Veterinario::read(istream &i){	return i; }
 
-/**
- * @brief      Desttrutor do objeto Tratador.
- */
-Tratador::~Tratador(){}
-
-
-/**
- * @brief      Construtor do objeto Veterinario.
- */
-Veterinario::Veterinario(){}
-
-/**
- * @brief      Destrutor do objeto Veterinario.
- */
-Veterinario::~Veterinario(){}
+istream& Tratador::read(istream &i){	return i; }

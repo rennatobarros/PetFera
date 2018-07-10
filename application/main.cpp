@@ -33,10 +33,10 @@ int main(){
 
 	try{
 
-		string escolha = "";
-		validaEntrada(escolha);
+		//string escolha = "";
+		//validaEntrada(escolha);
 
-		int opcao = stoi(escolha);
+		int opcao = 99;
 		while(opcao != 0){
 			cout << "1 - Cadastrar animal" << endl;
 			cout << "2 - Cadastrar funcionario" << endl;
@@ -57,7 +57,7 @@ int main(){
 					cin >> opcao;
 					switch(opcao){
 						case 1:
-							//cadastrar(&map_mamiferos);
+							cadastrar(map_mamiferos);
 							break;
 						case 2:
 							//cadastrar(&map_anfibios);
@@ -80,7 +80,7 @@ int main(){
 				cin >> opcao;
 				switch(opcao){
 					case 1:
-						//cadastrar(&map_veterinario);
+						cadastrar(map_veterinario);
 						break;
 					case 2:
 						//cadastrar(&map_tratador);
@@ -88,6 +88,36 @@ int main(){
 					default:
 						cout << "Opcao invalida" << endl;
 
+				}
+				break;
+
+				case 3:
+				cout << "Qual a classe do animal? ";
+				cout << "1 - Mamifero" << endl;
+				cout << "2 - Anfibio" << endl;
+				cout << "3 - Reptil" << endl;
+				cout << "4 - Ave Nativa" << endl;
+				cout << "5 - Ave Exotica" << endl;
+				cin >> opcao;
+				switch(opcao){
+					case 1:
+						consultar(map_mamiferos);
+						break;
+					case 2:
+						//consultar(&map_anfibios);
+						break;
+					case 3:
+						//consultar(&map_repteis);
+						break;
+					case 4:
+						//consultar(&map_avesNativas);
+						break;
+					case 5:
+						//consultar(&map_avesExoticas);
+						break;
+					default:
+						cout << "Opcao invalida" << endl;
+						opcao = 3;
 				}
 				break;
 			}

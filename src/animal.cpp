@@ -392,6 +392,8 @@ Mamifero::setCorPelo(string corPelo_)
  */
 Reptil::Reptil(){}
 
+Reptil::Reptil(int _id, float _tamanho, string _classe, string _nome, string _cientifico, string _dieta, string _batismo, char _sexo, short _veterinario, short _tratador, bool _venenoso, string _tipoVeneno):Animal(_id, _tamanho, _classe, _nome, _cientifico, _dieta, _batismo, _sexo, _veterinario, _tratador), venenoso(_venenoso), tipoVeneno(_tipoVeneno){}
+
 /**
  * @brief      Destroys the object.
  */
@@ -496,3 +498,119 @@ AveNativa::AveNativa(int _id, float _tamanho, string _classe, string _nome, stri
 AveNativa::AveNativa(){}
 
 AveNativa::~AveNativa(){}
+
+ostream& operator<<(ostream &o, Animal &a){
+	o 	<< "ID: " << a.getId() << endl
+		<< "Classe: " << a.getClasse() << endl
+		<< "Nome: " << a.getNome() << endl
+		<< "Nome cientifico: " << a.getCientifico() << endl
+		<< "Sexo: " << a.getSexo() << endl
+		<< "Tamanho: " << a.getTamanho() << "m" << endl
+		<< "Dieta: " << a.getDieta() << endl
+		<< "Cod. veterinario: " << a.getVeterinario() << endl
+		<< "Cod. tratador: " << a.getTratador() << endl
+		<< "Nome de Batismo: " << a.getBatismo() << endl;
+		return a.print(o);
+}
+
+ostream& Anfibio::print(ostream &o)const {	
+	o << "Total de Mudas: " << totalMudas << endl;
+	o << "Ultima Muda: " << ultimaMuda << endl;
+	return o; 
+}
+
+ostream& Ave::print(ostream &o)const {	
+	o << "Tamanho do bico: " << tamanhoBico << endl;
+	o << "Envergadura: " << envergadura << endl;
+	return o; 
+}
+
+ostream& Mamifero::print(ostream &o)const {	
+	o << "Cor do pêlo: " << corPelo << endl;
+	return o; 
+}
+
+ostream& Reptil::print(ostream &o)const {	
+	if (venenoso == true){
+		o << "Venenoso: Sim" << endl;
+	}else{
+		o << "Venenoso: Não" << endl;
+	}
+
+	o << "Tipo do Veneno: " << tipoVeneno << endl;
+	return o; 
+}
+
+
+
+istream& operator>>(istream &i, Animal &a){
+	string temp;
+
+	cout << "Digite o ID do Animal: ";
+	i >> temp;
+	a.setId(stoi(temp));
+
+	cout << "Digite a classe do Animal: ";
+	i >> temp;
+	a.setClasse(temp);
+
+	cout << "Digite o nome cientifico do Animal: ";
+	getline(i, temp);
+	a.setNome(temp);
+
+	cout << "Digite o sexo do Animal: ";
+	i >> temp;
+	a.setSexo(temp[0]);
+
+	cout << "Digite o tamanho do do Animal em metros: ";
+	i >> temp;
+	a.setTamanho(stof(temp));
+
+	cout << "Digite a dieta do Animal: ";
+	i >> temp;
+	a.setDieta(temp);
+
+	cout << "Digite 0 caso o Animal não possua um Veterinario; 1 caso contrário: ";
+	i >> temp;
+	a.setVeterinario(stoi(temp));
+
+	cout << "Digite 0 caso o Animal não possua um Tratador; 1 caso contrário: ";
+	i >> temp;
+	a.setTratador(stoi(temp));
+
+	cout << "Digite o nome de batismo do  Animal: ";
+	i >> temp;
+	a.setBatismo(temp);
+
+
+	return a.read(i);
+
+
+}
+
+istream& Anfibio::read(istream &i){
+	i >> totalMudas;
+	i >> ultimaMuda;
+	cout << endl;
+	return i;
+}
+
+istream& Ave::read(istream &i){
+	i >> tamanhoBico;
+	i >> envergadura;
+	cout << endl;
+	return i;
+}
+
+istream& Mamifero::read(istream &i){
+	i >> corPelo;
+	cout << endl;
+	return i;
+}
+
+istream& Reptil::read(istream &i){
+	i >> venenoso;
+	i >> tipoVeneno;
+	cout << endl;
+	return i;
+}

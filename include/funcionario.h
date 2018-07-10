@@ -67,6 +67,10 @@ class Funcionario{
 		/** Sobrecarga de operadores */
 		friend istream& operator>> (istream &i, Funcionario &f);
 		friend ostream& operator<< (ostream &o, Funcionario &f);
+
+	private:
+		virtual ostream& print(ostream&) const = 0;
+		virtual istream& read(istream&) = 0;
 };
 
 
@@ -77,6 +81,9 @@ class Veterinario : public Funcionario{
 	public:
 		Veterinario();
 		~Veterinario();
+	private:
+		istream& read(istream &i);
+		ostream& print(ostream &o) const;
 	
 };
 
@@ -87,6 +94,9 @@ class Tratador : public Funcionario{
 	public:
 		Tratador();
 		~Tratador();
+	private:
+		istream& read(istream &i);
+		ostream& print(ostream &o) const;
 	
 };
 

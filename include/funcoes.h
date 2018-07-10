@@ -25,11 +25,26 @@ void initAnimais(map<int, Anfibio> anfibios, map<int, Reptil> repteis, map<int, 
 
 void initFuncionarios(map<int, Tratador> tratadores, map<int, Veterinario> veterinarios);
 
-/**template <typename T>
-void cadastrar(map<int,T> * map){
+template <typename T>
+void cadastrar(map<int,T> map){
 	T new_cadastro;
-	std::cin >> new_cadastro;
-	map->emplace(new_cadastro.getId(), new_cadastro);
-}*/
+	cin >> new_cadastro;
+	map.emplace(new_cadastro.getId(), new_cadastro);
+}
+
+template<typename T >
+bool consultar(map<int, T> map){
+	int id;
+	cout << "Digite o ID a ser procurado: ";
+	cin >> id;
+	auto it = map.find(id);
+	if(it == map.end()){
+		cout << "Não encontrado." << endl;
+		return false;
+	}
+	cout << it->second;
+	return true;
+
+}	
 
 #endif

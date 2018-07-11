@@ -201,8 +201,14 @@ istream& operator>>(istream &i, Funcionario &f){
 	i >> temp;
 	f.setId(stoi(temp));
 
-	cout << "Digite o nome do Funcionario: ";
+	cout << "Digite a Especialidade do Funcionario: ";
 	i >> temp;
+	f.setEspecialidade(temp);
+
+	i.ignore();
+
+	cout << "Digite o nome do Funcionario: ";
+	getline(i, temp);
 	f.setNome(temp);
 
 	cout << "Digite o CPF do Funcionario: ";
@@ -221,14 +227,10 @@ istream& operator>>(istream &i, Funcionario &f){
 	i >> temp;
 	f.setFatorRH(temp[0]);
 
-	cout << "Digite a Especialidade do Funcionario: ";
-	i >> temp;
-	f.setEspecialidade(temp);
-
 	return f.read(i);
 
 }
 
 istream& Veterinario::read(istream &i){	return i; }
 
-istream& Tratador::read(istream &i){	return i; }
+istream& Tratador::read(istream &i){ return i; }

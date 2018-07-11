@@ -260,6 +260,9 @@ public:
 	AveExotica();
 	AveExotica(int _id, float _tamanho, string _classe, string _nome, string _cientifico, string _dieta, string _batismo, char _sexo, short _veterinario, short _tratador, int _tamanhoBico, int _envergadura, string _ibama, string _pais_origem);
 	~AveExotica();
+private:
+	istream& read(istream &i);
+	ostream& print(ostream &o) const;
 	
 };
 
@@ -272,6 +275,9 @@ public:
 	AveNativa();
 	AveNativa(int _id, float _tamanho, string _classe, string _nome, string _cientifico, string _dieta, string _batismo, char _sexo, short _veterinario, short _tratador, int _tamanhoBico, int _envergadura, string _ibama, string _uf_origem, string _autorizacao);
 	~AveNativa();
+private:
+	istream& read(istream &i);
+	ostream& print(ostream &o) const;
 	
 };
 

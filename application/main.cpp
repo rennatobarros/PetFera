@@ -36,8 +36,9 @@ int main(){
 		//string escolha = "";
 		//validaEntrada(escolha);
 
-		int opcao = 99;
-		while(opcao != 0){
+		int opcao;
+		int op_aux;
+		do{
 			cout << "1 - Cadastrar animal" << endl;
 			cout << "2 - Cadastrar funcionario" << endl;
 			cout << "3 - Consultar animal" << endl;
@@ -54,19 +55,19 @@ int main(){
 					cout << "2 - Anfibio" << endl;
 					cout << "3 - Reptil" << endl;
 					cout << "4 - Ave" << endl;
-					cin >> opcao;
-					switch(opcao){
+					cin >> op_aux;
+					switch(op_aux){
 						case 1:
 							cadastrar(map_mamiferos);
 							break;
 						case 2:
-							//cadastrar(&map_anfibios);
+							cadastrar(map_anfibios);
 							break;
 						case 3:
-							//cadastrar(&map_repteis);
+							cadastrar(map_repteis);
 							break;
 						case 4:
-							//cadastrar(&map_aves);
+							cadastrar(map_aves);
 							break;
 						default:
 							cout << "Opcao invalida" << endl;
@@ -74,55 +75,128 @@ int main(){
 					break;
 
 				case 2:
-				cout << "Qual o cargo?" << endl;
-				cout << "1 - Veterinario" << endl;
-				cout << "2 - Tratador" << endl;
-				cin >> opcao;
-				switch(opcao){
-					case 1:
-						cadastrar(map_veterinario);
-						break;
-					case 2:
-						//cadastrar(&map_tratador);
-						break;
-					default:
-						cout << "Opcao invalida" << endl;
+					cout << "Qual o cargo?" << endl;
+					cout << "1 - Veterinario" << endl;
+					cout << "2 - Tratador" << endl;
+					cin >> op_aux;
+					switch(op_aux){
+						case 1:
+							cadastrar(map_veterinario);
+							break;
+						case 2:
+							cadastrar(map_tratador);
+							break;
+						default:
+							cout << "Opcao invalida" << endl;
 
-				}
-				break;
+					}
+					break;
 
 				case 3:
-				cout << "Qual a classe do animal? ";
-				cout << "1 - Mamifero" << endl;
-				cout << "2 - Anfibio" << endl;
-				cout << "3 - Reptil" << endl;
-				cout << "4 - Ave Nativa" << endl;
-				cout << "5 - Ave Exotica" << endl;
-				cin >> opcao;
-				switch(opcao){
-					case 1:
-						consultar(map_mamiferos);
-						break;
-					case 2:
-						//consultar(&map_anfibios);
-						break;
-					case 3:
-						//consultar(&map_repteis);
-						break;
-					case 4:
-						//consultar(&map_avesNativas);
-						break;
-					case 5:
-						//consultar(&map_avesExoticas);
-						break;
-					default:
-						cout << "Opcao invalida" << endl;
-						opcao = 3;
-				}
-				break;
+					cout << "Qual a classe do animal? ";
+					cout << "1 - Mamifero" << endl;
+					cout << "2 - Anfibio" << endl;
+					cout << "3 - Reptil" << endl;
+					cout << "4 - Ave Nativa" << endl;
+					cout << "5 - Ave Exotica" << endl;
+					cin >> op_aux;
+					switch(op_aux){
+						case 1:
+							consultar(map_mamiferos);
+							break;
+						case 2:
+							//consultar(&map_anfibios);
+							break;
+						case 3:
+							//consultar(&map_repteis);
+							break;
+						case 4:
+							//consultar(&map_avesNativas);
+							break;
+						case 5:
+							//consultar(&map_avesExoticas);
+							break;
+						default:
+							cout << "Opcao invalida" << endl;
+					}
+					break;
+
+				case 4:
+					cout << "Qual o cargo?" << endl;
+					cout << "1 - Veterinario" << endl;
+					cout << "2 - Tratador" << endl;
+					cin >> op_aux;
+					switch(op_aux){
+						case 1:
+							consultar(map_veterinario);
+							break;
+						case 2:
+							//consultar(&map_tratador);
+							break;
+						default:
+							cout << "Opcao invalida" << endl;
+
+					}
+					break;
+
+				case 5:
+					cout << "Qual a classe do animal? ";
+					cout << "1 - Mamifero" << endl;
+					cout << "2 - Anfibio" << endl;
+					cout << "3 - Reptil" << endl;
+					cout << "4 - Ave Nativa" << endl;
+					cout << "5 - Ave Exotica" << endl;
+					cin >> op_aux;
+					switch(op_aux){
+						case 1:
+							//excluir(&map_mamiferos);
+							break;
+						case 2:
+							//excluir(&map_anfibios);
+							break;
+						case 3:
+							//excluir(&map_repteis);
+							break;
+						case 4:
+							//excluir(&map_avesNativas);
+							break;
+						case 5:
+							//excluir(&map_avesExoticas);
+							break;
+						default:
+							cout << "Opcao invalida" << endl;
+					}
+					break;
+
+				case 6:
+					cout << "Qual o cargo?" << endl;
+					cout << "1 - Veterinario" << endl;
+					cout << "2 - Tratador" << endl;
+					cin >> op_aux;
+					switch(op_aux){
+						case 1:
+							//excluir(&map_veterinario);
+							break;
+						case 2:
+							//excluir(&map_tratador);
+							break;
+						default:
+							cout << "Opcao invalida" << endl;
+
+					}
+					break;
+
+				case 0:
+					opcao = 0;
+					break;
+
+				default:
+					cout << "Opcao invalida" << endl;
 			}
 
-		}
+
+		}while(opcao != 0);
+		
 	}catch(ErroNaEntrada &e){
 		cerr << e.what() << endl;
 	}

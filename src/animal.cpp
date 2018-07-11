@@ -541,6 +541,20 @@ ostream& Reptil::print(ostream &o)const {
 	return o; 
 }
 
+ostream& AveExotica::print(ostream &o)const {	
+	o << "Ibama: " << ibama << endl;
+	o << "País de origem: " << pais_origem << endl;
+	return o; 
+}
+
+ostream& AveNativa::print(ostream &o)const {	
+	o << "Ibama: " << ibama << endl;
+	o << "Estado de origem: " << uf_origem << endl;
+	o << "Autorização: " << autorizacao << endl;
+	return o; 
+}
+
+
 istream& operator>>(istream &i, Animal &a){
 	string temp;
 
@@ -590,28 +604,71 @@ istream& operator>>(istream &i, Animal &a){
 
 
 istream& Anfibio::read(istream &i){
+	cout << "Digite o total de mudas: ";
 	i >> totalMudas;
+
+	cout << "Data da ultima muda (dd/mm/aa): ";
 	i >> ultimaMuda;
 	cout << endl;
 	return i;
 }
 
 istream& Ave::read(istream &i){
+	cout << "Digite o tamanho do bico em m: ";
 	i >> tamanhoBico;
+
+	cout << "Digite a envergadura em m: ";
 	i >> envergadura;
 	cout << endl;
 	return i;
 }
 
 istream& Mamifero::read(istream &i){
+	cout << "Informe a cor do pêlo: ";
 	i >> corPelo;
 	cout << endl;
 	return i;
 }
 
 istream& Reptil::read(istream &i){
-	i >> venenoso;
-	i >> tipoVeneno;
+	string temp;
+
+	cout << "Informe se o animal é venenoso (sim ou nao): ";
+	i >> temp;
+
+	if (temp == "sim"){
+		venenoso = true;
+
+		cout << "Informe o tipo do veneno: ";
+		i >> tipoVeneno;
+	}else{
+		venenoso = false;
+		tipoVeneno = "Nenhum";
+	}
+
+	cout << endl;
+	return i;
+}
+
+istream& AveExotica::read(istream &i){
+	cout << "Ibama: ";
+	i >> ibama;
+
+	cout << "Pais de origem: ";
+	i >> pais_origem;
+	cout << endl;
+	return i;
+}
+
+istream& AveNativa::read(istream &i){
+	cout << "Ibama: ";
+	i >> ibama;
+
+	cout << "Estado de origem: ";
+	i >> uf_origem;
+
+	cout << "Autorização: ";
+	i >> autorizacao;
 	cout << endl;
 	return i;
 }

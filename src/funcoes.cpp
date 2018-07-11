@@ -170,6 +170,7 @@ void initAnimais(map<int, Anfibio> anfibios, map<int, Reptil> repteis, map<int, 
 					mamiferos.emplace(stoi(id), animal);
 				}
 			}
+			arq.close();
 		}
 	}catch(FalhaNoArquivo &f){
 		cerr << f.what() << endl;
@@ -240,6 +241,7 @@ void initFuncionarios(map<int, Tratador> tratadores, map<int, Veterinario> veter
 					veterinarios.emplace(stoi(id), funcionario);
 				}
 			}
+			arq.close();
 		}
 	}catch(FalhaNoArquivo &f){
 		cerr << f.what() << endl;

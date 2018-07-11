@@ -541,8 +541,6 @@ ostream& Reptil::print(ostream &o)const {
 	return o; 
 }
 
-
-
 istream& operator>>(istream &i, Animal &a){
 	string temp;
 
@@ -553,6 +551,8 @@ istream& operator>>(istream &i, Animal &a){
 	cout << "Digite a classe do Animal: ";
 	i >> temp;
 	a.setClasse(temp);
+
+	i.ignore();
 
 	cout << "Digite o nome cientifico do Animal: ";
 	getline(i, temp);
@@ -587,6 +587,7 @@ istream& operator>>(istream &i, Animal &a){
 
 
 }
+
 
 istream& Anfibio::read(istream &i){
 	i >> totalMudas;

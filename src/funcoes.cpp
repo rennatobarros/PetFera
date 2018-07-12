@@ -6,7 +6,7 @@ void validaEntrada(string opcao){
 	}
 } 
 
-void initAnimais(map<int, Anfibio> anfibios, map<int, Reptil> repteis, map<int, Mamifero> mamiferos, map<int, Ave> aves){
+void initAnimais(map<int, Anfibio> anfibios, map<int, Reptil> repteis, map<int, Mamifero> mamiferos, map<int, AveNativa> aveNativa, map<int, AveExotica> aveExotica){
 	ifstream arq;
 
 	/** Tratando possiveis erros na abertura de arquivos. */
@@ -75,8 +75,8 @@ void initAnimais(map<int, Anfibio> anfibios, map<int, Reptil> repteis, map<int, 
 
 					repteis.emplace(stoi(id), animal);
 
-				}else if(classe == "Aves"){
-					Ave animal;
+				}else if(classe == "Ave Nativa"){
+					AveNativa animal;
 
 					animal.setId(stoi(id));
 					animal.setClasse(classe);
@@ -89,10 +89,10 @@ void initAnimais(map<int, Anfibio> anfibios, map<int, Reptil> repteis, map<int, 
 					animal.setTratador(stoi(tratador));
 					animal.setBatismo(batismo);
 
-					aves.emplace(stoi(id), animal);
+					aveNativa.emplace(stoi(id), animal);
 				
-				}else if(classe == "Mammalia"){
-					Mamifero animal;
+				}else if(classe == "Ave Exotica"){
+					AveExotica animal;
 
 					animal.setId(stoi(id));
 					animal.setClasse(classe);
@@ -105,54 +105,8 @@ void initAnimais(map<int, Anfibio> anfibios, map<int, Reptil> repteis, map<int, 
 					animal.setTratador(stoi(tratador));
 					animal.setBatismo(batismo);
 
-					mamiferos.emplace(stoi(id), animal);
-				}
-				if (classe == "Amphibia"){
-					Anfibio animal;
-
-					animal.setId(stoi(id));
-					animal.setClasse(classe);
-					animal.setNome(nome);
-					animal.setCientifico(cientifico);
-					animal.setSexo(sexo[0]);
-					animal.setTamanho(stof(tamanho));
-					animal.setDieta(dieta);
-					animal.setVeterinario(stoi(vet));
-					animal.setTratador(stoi(tratador));
-					animal.setBatismo(batismo);
-
-					anfibios.emplace(stoi(id), animal);
-				}
-				else if(classe == "Reptilia"){
-					Reptil animal;
-
-					animal.setId(stoi(id));
-					animal.setClasse(classe);
-					animal.setNome(nome);
-					animal.setCientifico(cientifico);
-					animal.setSexo(sexo[0]);
-					animal.setTamanho(stof(tamanho));
-					animal.setDieta(dieta);
-					animal.setVeterinario(stoi(vet));
-					animal.setTratador(stoi(tratador));
-					animal.setBatismo(batismo);
-
-					repteis.emplace(stoi(id), animal);
-				}else if(classe == "Aves"){
-					Ave animal;
-
-					animal.setId(stoi(id));
-					animal.setClasse(classe);
-					animal.setNome(nome);
-					animal.setCientifico(cientifico);
-					animal.setSexo(sexo[0]);
-					animal.setTamanho(stof(tamanho));
-					animal.setDieta(dieta);
-					animal.setVeterinario(stoi(vet));
-					animal.setTratador(stoi(tratador));
-					animal.setBatismo(batismo);
-
-					aves.emplace(stoi(id), animal);
+					aveExotica.emplace(stoi(id), animal);
+				
 				}else if(classe == "Mammalia"){
 					Mamifero animal;
 

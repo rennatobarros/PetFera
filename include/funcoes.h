@@ -21,7 +21,7 @@ using namespace std;
 
 void validaEntrada(string opcao);
 
-void initAnimais(map<int, Anfibio> anfibios, map<int, Reptil> repteis, map<int, Mamifero> mamiferos, map<int, Ave> aves);
+void initAnimais(map<int, Anfibio> anfibios, map<int, Reptil> repteis, map<int, Mamifero> mamiferos, map<int, AveNativa> aveNativa, map<int, AveExotica> aveExotica);
 
 void initFuncionarios(map<int, Tratador> tratadores, map<int, Veterinario> veterinarios);
 

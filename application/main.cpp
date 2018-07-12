@@ -21,12 +21,13 @@ int main(){
 	map<int,Anfibio > map_anfibios;
 	map<int,Reptil > map_repteis;
 	map<int,Mamifero > map_mamiferos;
-	map<int,Ave > map_aves;
+	map<int,AveExotica > map_aves_exoticas;
+	map<int,AveNativa > map_aves_nativas;
 	map<int,Tratador > map_tratador;
 	map<int,Veterinario > map_veterinario;
 
 	/** Função que salva os animais. */
-	initAnimais(map_anfibios, map_repteis, map_mamiferos, map_aves);
+	initAnimais(map_anfibios, map_repteis, map_mamiferos, map_aves_nativas, map_aves_exoticas);
 
 	/** Função que salva os funcionários. */
 	initFuncionarios(map_tratador, map_veterinario);
@@ -54,7 +55,8 @@ int main(){
 					cout << "1 - Mamifero" << endl;
 					cout << "2 - Anfibio" << endl;
 					cout << "3 - Reptil" << endl;
-					cout << "4 - Ave" << endl;
+					cout << "4 - Ave Nativa" << endl;
+					cout << "5 - Ave Exotica" << endl;
 					cin >> op_aux;
 					switch(op_aux){
 						case 1:
@@ -67,7 +69,10 @@ int main(){
 							cadastrar(map_repteis);
 							break;
 						case 4:
-							cadastrar(map_aves);
+							cadastrar(map_aves_nativas);
+							break;
+						case 5:
+							cadastrar(map_aves_exoticas);
 							break;
 						default:
 							cout << "Opcao invalida!!!!\n" << endl;

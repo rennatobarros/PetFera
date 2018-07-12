@@ -1,3 +1,8 @@
+/**
+ * @file funcoes.cpp
+ * @brief Arquivo com a implementação dos métodos principais do sistema
+ */
+
 #include "funcoes.h"
 
 void validaEntrada(string opcao){

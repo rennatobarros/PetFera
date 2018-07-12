@@ -1,5 +1,5 @@
 /**
- * @file funcionario.h
+ * @file funcoes.h
  * @brief Arquivo .h com as definições dos métodos utilizados no sistema.
  */
 #ifndef FUNCOES_H
@@ -29,7 +29,7 @@ template <typename T>
 void cadastrar(map<int,T> map){
 	T new_cadastro;
 	cin >> new_cadastro;
-	map.emplace(new_cadastro.getId(), new_cadastro);
+	map.insert(pair<int, T> (new_cadastro.getId(), new_cadastro));
 	cout << "Cadastrado com sucesso!!!" << endl;
 }
 

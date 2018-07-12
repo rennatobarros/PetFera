@@ -443,10 +443,21 @@ Reptil::setTipoVeneno(string tipoVeneno_)
 	tipoVeneno = tipoVeneno;
 }
 
+/**
+ * @brief      Constructs the object.
+ */
 AnimalSilvestre::AnimalSilvestre(){}
 		
+/**
+ * @brief      Constructs the object.
+ *
+ * @param[in]  _ibama  The ibama
+ */
 AnimalSilvestre::AnimalSilvestre(string _ibama):ibama(_ibama){}
 
+/**
+ * @brief      Destroys the object.
+ */
 AnimalSilvestre::~AnimalSilvestre(){}
 
 /**
@@ -456,49 +467,166 @@ AnimalSilvestre::~AnimalSilvestre(){}
  */
 string AnimalSilvestre::getIbama(){ return ibama; }
 
+/**
+ * @brief      Sets the ibama.
+ *
+ * @param[in]  _ibama  The ibama
+ */
 void AnimalSilvestre::setIbama(string _ibama){ ibama = _ibama; }
 
 
 
+/**
+ * @brief      Constructs the object.
+ */
 Exotico::Exotico(){}
 
+/**
+ * @brief      Constructs the object.
+ *
+ * @param[in]  _ibama        The ibama
+ * @param[in]  _pais_origem  The pais origem
+ */
 Exotico::Exotico(string _ibama, string _pais_origem):AnimalSilvestre(_ibama), pais_origem(_pais_origem){}
 
+/**
+ * @brief      Destroys the object.
+ */
 Exotico::~Exotico(){}
 
+/**
+ * @brief      Gets the pais origem.
+ *
+ * @return     The pais origem.
+ */
 string Exotico::getPaisOrigem(){ return pais_origem; }
 
+/**
+ * @brief      Sets the pais origem.
+ *
+ * @param[in]  _pais_origem  The pais origem
+ */
 void Exotico::setPaisOrigem(string _pais_origem){ pais_origem = _pais_origem; }
 
 
+/**
+ * @brief      Constructs the object.
+ */
 Nativo::Nativo(){}
 
+/**
+ * @brief      Constructs the object.
+ *
+ * @param[in]  _ibama        The ibama
+ * @param[in]  _uf_origem    The uf origem
+ * @param[in]  _autorizacao  The autorizacao
+ */
 Nativo::Nativo(string _ibama, string _uf_origem, string _autorizacao):AnimalSilvestre(_ibama), uf_origem(_uf_origem), autorizacao(_autorizacao){}
 
+/**
+ * @brief      Destroys the object.
+ */
 Nativo::~Nativo(){}
 
+/**
+ * @brief      Gets the uf origem.
+ *
+ * @return     The uf origem.
+ */
 string Nativo::getUfOrigem(){ return uf_origem; }
 
+/**
+ * @brief      Gets the autorizacao.
+ *
+ * @return     The autorizacao.
+ */
 string Nativo::getAutorizacao(){ return autorizacao; }
 
+/**
+ * @brief      Sets the uf origem.
+ *
+ * @param[in]  _uf_origem  The uf origem
+ */
 void Nativo::setUfOrigem(string _uf_origem){ uf_origem = _uf_origem; }
 
+/**
+ * @brief      Sets the autorizacao.
+ *
+ * @param[in]  _autorizacao  The autorizacao
+ */
 void Nativo::setAutorizacao(string _autorizacao){ autorizacao = _autorizacao; }
 
 
+/**
+ * @brief      Constructs the object.
+ */
 AveExotica::AveExotica(){}
 
+/**
+ * @brief      Constructs the object.
+ *
+ * @param[in]  _id           The identifier
+ * @param[in]  _tamanho      The tamanho
+ * @param[in]  _classe       The classe
+ * @param[in]  _nome         The nome
+ * @param[in]  _cientifico   The cientifico
+ * @param[in]  _dieta        The dieta
+ * @param[in]  _batismo      The batismo
+ * @param[in]  _sexo         The sexo
+ * @param[in]  _veterinario  The veterinario
+ * @param[in]  _tratador     The tratador
+ * @param[in]  _tamanhoBico  The tamanho bico
+ * @param[in]  _envergadura  The envergadura
+ * @param[in]  _ibama        The ibama
+ * @param[in]  _pais_origem  The pais origem
+ */
 AveExotica::AveExotica(int _id, float _tamanho, string _classe, string _nome, string _cientifico, string _dieta, string _batismo, char _sexo, short _veterinario, short _tratador, int _tamanhoBico, int _envergadura, string _ibama, string _pais_origem):Ave(_id, _tamanho, _classe, _nome, _cientifico, _dieta, _batismo, _sexo, _veterinario, _tratador, _tamanhoBico, _envergadura), Exotico(_ibama, _pais_origem){}
 
+/**
+ * @brief      Destroys the object.
+ */
 AveExotica::~AveExotica(){}
 
 
+/**
+ * @brief      Constructs the object.
+ *
+ * @param[in]  _id           The identifier
+ * @param[in]  _tamanho      The tamanho
+ * @param[in]  _classe       The classe
+ * @param[in]  _nome         The nome
+ * @param[in]  _cientifico   The cientifico
+ * @param[in]  _dieta        The dieta
+ * @param[in]  _batismo      The batismo
+ * @param[in]  _sexo         The sexo
+ * @param[in]  _veterinario  The veterinario
+ * @param[in]  _tratador     The tratador
+ * @param[in]  _tamanhoBico  The tamanho bico
+ * @param[in]  _envergadura  The envergadura
+ * @param[in]  _ibama        The ibama
+ * @param[in]  _uf_origem    The uf origem
+ * @param[in]  _autorizacao  The autorizacao
+ */
 AveNativa::AveNativa(int _id, float _tamanho, string _classe, string _nome, string _cientifico, string _dieta, string _batismo, char _sexo, short _veterinario, short _tratador, int _tamanhoBico, int _envergadura, string _ibama, string _uf_origem, string _autorizacao):Ave(_id, _tamanho, _classe, _nome, _cientifico, _dieta, _batismo, _sexo, _veterinario, _tratador, _tamanhoBico, _envergadura), Nativo(_ibama, _uf_origem, _autorizacao){}
 
+/**
+ * @brief      Constructs the object.
+ */
 AveNativa::AveNativa(){}
 
+/**
+ * @brief      Destroys the object.
+ */
 AveNativa::~AveNativa(){}
 
+/**
+ * @brief      { operator_description }
+ *
+ * @param      o     { parameter_description }
+ * @param      a     { parameter_description }
+ *
+ * @return     { description_of_the_return_value }
+ */
 ostream& operator<<(ostream &o, Animal &a){
 	o 	<< "ID: " << a.getId() << endl
 		<< "Classe: " << a.getClasse() << endl
@@ -513,23 +641,51 @@ ostream& operator<<(ostream &o, Animal &a){
 		return a.print(o);
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @param      o     { parameter_description }
+ *
+ * @return     { description_of_the_return_value }
+ */
 ostream& Anfibio::print(ostream &o)const {	
 	o << "Total de Mudas: " << totalMudas << endl;
 	o << "Ultima Muda: " << ultimaMuda << endl;
 	return o; 
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @param      o     { parameter_description }
+ *
+ * @return     { description_of_the_return_value }
+ */
 ostream& Ave::print(ostream &o)const {	
 	o << "Tamanho do bico: " << tamanhoBico << endl;
 	o << "Envergadura: " << envergadura << endl;
 	return o; 
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @param      o     { parameter_description }
+ *
+ * @return     { description_of_the_return_value }
+ */
 ostream& Mamifero::print(ostream &o)const {	
 	o << "Cor do pêlo: " << corPelo << endl;
 	return o; 
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @param      o     { parameter_description }
+ *
+ * @return     { description_of_the_return_value }
+ */
 ostream& Reptil::print(ostream &o)const {	
 	if (venenoso == true){
 		o << "Venenoso: Sim" << endl;
@@ -541,12 +697,26 @@ ostream& Reptil::print(ostream &o)const {
 	return o; 
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @param      o     { parameter_description }
+ *
+ * @return     { description_of_the_return_value }
+ */
 ostream& AveExotica::print(ostream &o)const {	
 	o << "Ibama: " << ibama << endl;
 	o << "País de origem: " << pais_origem << endl;
 	return o; 
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @param      o     { parameter_description }
+ *
+ * @return     { description_of_the_return_value }
+ */
 ostream& AveNativa::print(ostream &o)const {	
 	o << "Ibama: " << ibama << endl;
 	o << "Estado de origem: " << uf_origem << endl;
@@ -555,6 +725,14 @@ ostream& AveNativa::print(ostream &o)const {
 }
 
 
+/**
+ * @brief      { operator_description }
+ *
+ * @param      i     { parameter_description }
+ * @param      a     { parameter_description }
+ *
+ * @return     { description_of_the_return_value }
+ */
 istream& operator>>(istream &i, Animal &a){
 	string temp;
 
@@ -603,6 +781,13 @@ istream& operator>>(istream &i, Animal &a){
 }
 
 
+/**
+ * @brief      { function_description }
+ *
+ * @param      i     { parameter_description }
+ *
+ * @return     { description_of_the_return_value }
+ */
 istream& Anfibio::read(istream &i){
 	cout << "Digite o total de mudas: ";
 	i >> totalMudas;
@@ -613,6 +798,13 @@ istream& Anfibio::read(istream &i){
 	return i;
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @param      i     { parameter_description }
+ *
+ * @return     { description_of_the_return_value }
+ */
 istream& Ave::read(istream &i){
 	cout << "Digite o tamanho do bico em m: ";
 	i >> tamanhoBico;
@@ -623,6 +815,13 @@ istream& Ave::read(istream &i){
 	return i;
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @param      i     { parameter_description }
+ *
+ * @return     { description_of_the_return_value }
+ */
 istream& Mamifero::read(istream &i){
 	cout << "Informe a cor do pêlo: ";
 	i >> corPelo;
@@ -630,6 +829,13 @@ istream& Mamifero::read(istream &i){
 	return i;
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @param      i     { parameter_description }
+ *
+ * @return     { description_of_the_return_value }
+ */
 istream& Reptil::read(istream &i){
 	string temp;
 
@@ -650,6 +856,13 @@ istream& Reptil::read(istream &i){
 	return i;
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @param      i     { parameter_description }
+ *
+ * @return     { description_of_the_return_value }
+ */
 istream& AveExotica::read(istream &i){
 	cout << "Ibama: ";
 	i >> ibama;
@@ -660,6 +873,13 @@ istream& AveExotica::read(istream &i){
 	return i;
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @param      i     { parameter_description }
+ *
+ * @return     { description_of_the_return_value }
+ */
 istream& AveNativa::read(istream &i){
 	cout << "Ibama: ";
 	i >> ibama;

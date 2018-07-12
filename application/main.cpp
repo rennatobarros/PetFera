@@ -136,7 +136,7 @@ int main(){
 							consultar(map_veterinario);
 							break;
 						case 2:
-							//consultar(&map_tratador);
+							consultar(map_tratador);
 							break;
 						default:
 							cout << "Opcao invalida!!!!!!" << endl;

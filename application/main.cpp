@@ -50,7 +50,7 @@ int main(){
 
 			switch (opcao){
 				case 1:
-					cout << "Qual a classe do animal? ";
+					cout << "Qual a classe do animal? " << endl;
 					cout << "1 - Mamifero" << endl;
 					cout << "2 - Anfibio" << endl;
 					cout << "3 - Reptil" << endl;
@@ -70,7 +70,7 @@ int main(){
 							cadastrar(map_aves);
 							break;
 						default:
-							cout << "Opcao invalida" << endl;
+							cout << "Opcao invalida!!!!\n" << endl;
 					}
 					break;
 
@@ -93,7 +93,7 @@ int main(){
 					break;
 
 				case 3:
-					cout << "Qual a classe do animal? ";
+					cout << "Qual a classe do animal? "<< endl;
 					cout << "1 - Mamifero" << endl;
 					cout << "2 - Anfibio" << endl;
 					cout << "3 - Reptil" << endl;
@@ -117,7 +117,7 @@ int main(){
 							//consultar(&map_avesExoticas);
 							break;
 						default:
-							cout << "Opcao invalida" << endl;
+							cout << "Opcao invalida!!!!!" << endl;
 					}
 					break;
 
@@ -134,13 +134,13 @@ int main(){
 							//consultar(&map_tratador);
 							break;
 						default:
-							cout << "Opcao invalida" << endl;
+							cout << "Opcao invalida!!!!!!" << endl;
 
 					}
 					break;
 
 				case 5:
-					cout << "Qual a classe do animal? ";
+					cout << "Qual a classe do animal? " << endl;
 					cout << "1 - Mamifero" << endl;
 					cout << "2 - Anfibio" << endl;
 					cout << "3 - Reptil" << endl;

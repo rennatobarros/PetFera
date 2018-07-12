@@ -46,18 +46,18 @@ void initAnimais(map<int, Anfibio> anfibios, map<int, Reptil> repteis, map<int, 
 				if (classe == "Amphibia"){
 					Anfibio animal;
 
-					animal.setId(stoi(id));
-					animal.setClasse(classe);
-					animal.setNome(nome);
-					animal.setCientifico(cientifico);
-					animal.setSexo(sexo[0]);
-					animal.setTamanho(stof(tamanho));
-					animal.setDieta(dieta);
-					animal.setVeterinario(stoi(vet));
-					animal.setTratador(stoi(tratador));
-					animal.setBatismo(batismo);
+				animal.setId(stoi(id));
+				animal.setClasse(classe);
+				animal.setNome(nome);
+				animal.setCientifico(cientifico);
+				animal.setSexo(sexo[0]);
+				animal.setTamanho(stof(tamanho));
+				animal.setDieta(dieta);
+				animal.setVeterinario(stoi(vet));
+				animal.setTratador(stoi(tratador));
+				animal.setBatismo(batismo);
 
-					anfibios.emplace(stoi(id), animal);
+				anfibios.emplace(stoi(id), animal);
 				
 				}else if(classe == "Reptilia"){
 					Reptil animal;
@@ -170,7 +170,6 @@ void initAnimais(map<int, Anfibio> anfibios, map<int, Reptil> repteis, map<int, 
 					mamiferos.emplace(stoi(id), animal);
 				}
 			}
-			arq.close();
 		}
 	}catch(FalhaNoArquivo &f){
 		cerr << f.what() << endl;
@@ -241,7 +240,6 @@ void initFuncionarios(map<int, Tratador> tratadores, map<int, Veterinario> veter
 					veterinarios.emplace(stoi(id), funcionario);
 				}
 			}
-			arq.close();
 		}
 	}catch(FalhaNoArquivo &f){
 		cerr << f.what() << endl;

@@ -30,6 +30,7 @@ void cadastrar(map<int,T> map){
 	T new_cadastro;
 	cin >> new_cadastro;
 	map.emplace(new_cadastro.getId(), new_cadastro);
+	cout << "Cadastrado com sucesso!!!" << endl;
 }
 
 template<typename T >
